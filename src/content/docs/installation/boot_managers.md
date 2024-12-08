@@ -18,6 +18,25 @@ handles the task of loading an OS kernel into memory, often along with support f
 For a more detailed explanation and the reason both terms are often used interchangeably,
 please see "[Managing EFI Boot Loaders for Linux: Basic Principles](https://www.rodsbooks.com/efi-bootloaders/principles.html)" by Rod Smith.
 
+Here is the feature comparison table for the boot managers, accompanied by additional details and recommendations:
+
+### **Feature Comparison Table**
+
+| **Feature**                | **systemd-boot**                     | **rEFInd**                            | **GRUB**                           |
+|----------------------------|---------------------------------------|---------------------------------------|------------------------------------|
+| **UEFI Support**            | ✅ Yes                               | ✅ Yes                               | ✅ Yes                            |
+| **BIOS Support**            | ❌ No                                | ❌ No                                | ✅ Yes                            |
+| **Autodetection**           | ❌ Limited (manual configuration)    | ✅ Full autodetection                | ✅ Autodetection (regenerates config) |
+| **Theming/Customization**   | ❌ Minimal                           | ✅ Extensive                          | ✅ Extensive                      |
+| **Configuration Complexity**| Simple                              | Moderate                             | Complex                          |
+| **Secure Boot Support**     | ✅ Yes                               | ✅ Yes                               | ✅ Yes                            |
+| **Filesystem Support**      | FAT, FAT16, FAT32                   | FAT, EXT4, BTRFS                     | Most Linux FS                     |
+| **Encrypted Boot**          | ❌ No                                | ❌ No                                | ✅ Yes (boot partition)           |
+| **Boot Time**               | Fastest                             | Moderate                             | Slowest                          |
+| **Hardware Compatibility**  | UEFI-only                          | UEFI-only                           | UEFI and BIOS                    |
+| **Ease of Setup**           | Moderate                            | Easy                                 | Moderate                        |
+| **Best Use Case**           | UEFI systems, single OS             | UEFI, multi-boot                     | BIOS systems or encrypted boot partitions |
+
 ## systemd-boot
 Part of systemd family, systemd-boot was created to be as simple as possible, therefore it only has support for UEFI based systems. This simple yet efficient design ensures it is reliable and fast. However this comes at the cost of advanced features supported by other boot managers.
 
