@@ -32,7 +32,6 @@ Here is the feature comparison table for the boot managers, accompanied by addit
 | **Secure Boot Support**     | ✅ Yes                               | ✅ Yes                               | ✅ Yes                            |
 | **Filesystem Support**      | FAT, FAT16, FAT32                   | FAT, EXT4, BTRFS                     | Most Linux FS                     |
 | **Encrypted Boot**          | ❌ No                                | ❌ No                                | ✅ Yes (boot partition)           |
-| **Boot Time**               | Fastest                             | Moderate                             | Slowest                          |
 | **Hardware Compatibility**  | UEFI-only                          | UEFI-only                           | UEFI and BIOS                    |
 | **Ease of Setup**           | Moderate                            | Easy                                 | Moderate                        |
 | **Best Use Case**           | UEFI systems, single OS             | UEFI, multi-boot                     | BIOS systems or encrypted boot partitions |
